@@ -1,0 +1,49 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+#define MAX 10
+using namespace std;
+struct matriz
+{
+	char mat[MAX][MAX];
+};
+void cargar(matriz v[],int n,string cadena);
+void mostrar(matriz v[],int n);
+void main()
+{
+	matriz v[MAX];
+	string cadena;
+	int n;
+	cout<<"Ingrese la cadena: ";
+	getline(cin,cadena);
+	cout<<"Ingrese numero de elementos: ";
+	cin>>n;
+	cargar(v,n,cadena);
+	mostrar(v,n);
+}
+void cargar(matriz v[],int n,string cadena)
+{
+	int i,j,k,l=0;
+	for(j=0;j<n;j++)
+		{for(i=0;i<n;i++)
+			{for(k=0;k<n;k++)
+				{v[i].mat[j][k]=cadena[l];
+				l++;
+				}
+				if(l==cadena.length())
+				l=0;
+			}
+		}
+}
+void mostrar(matriz v[],int n)
+{
+	int i,j,k;
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+			for(k=0;k<n;k++)
+				cout<<"VEC["<<i<<"].MAT["<<j<<"]["<<k<<"]= ";
+				cout<<v[i].mat[j][k];
+				cout<<endl;
+}
