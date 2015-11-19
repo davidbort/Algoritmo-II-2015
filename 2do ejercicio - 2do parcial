@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+#define MAX 10
+using namespace std;
+struct vector
+{
+	string vec[MAX];
+};
+void cargar(vector A[MAX][MAX],int n,string vec[]);
+void oredenar(vector A[MAX][MAX],int n,string vec[]);
+void main()
+{
+	string vec[MAX];
+	vector A[MAX][MAX]; 
+	int n;
+	cout<<"Ingrese numero de elementos: ";
+	cin>>n;
+	cargar(A,n,vec);
+}
+
+void cargar(vector A[MAX][MAX],int n,string vec[])
+{
+	cin.ignore();
+	int i,j,k;
+		for(i=0;i<n;i++)
+			{for(j=0;j<n;j++)
+				{for(k=0;k<n;k++)
+					{
+					cout<<"A["<<i<<"]["<<j<<"].v["<<k<<"]=";
+					getline(cin,vec[i]);
+					
+					}
+				}
+			}
+}
+void oredenar(vector A[MAX][MAX],int n,string vec[])
+{
+	int i,j,k;
+		for(i=0;i<n;i++)
+			for(j=0;j<n;j++)
+				for(k=0;k<n;k++)
+					
+}
